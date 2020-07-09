@@ -1,17 +1,9 @@
-def merge(left_array, right_array)
-  merged_array = []
-  until left_array == [] && right_array == []
-    if right_array == []
-      merged_array.push(left_array.delete_at(0))
-    elsif left_array == []
-      merged_array.push(right_array.delete_at(0))
-    elsif left_array[0] <= right_array[0]
-      merged_array.push(left_array.delete_at(0))
-    elsif left_array[0] > right_array[0]
-      merged_array.push(right_array.delete_at(0))
-    end
+def merge(left, right)
+  merged = []
+  until left.empty? || right.empty?
+    merged << (left.first <= right.first ? left : right).shift
   end
-  merged_array
+  merged + (right.empty? ? left : right)
 end
 
 def merge_sort(array)

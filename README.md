@@ -1,0 +1,1 @@
+A method that sorts a given array using a recursive merge sort.
